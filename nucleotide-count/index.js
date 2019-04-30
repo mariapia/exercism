@@ -1,11 +1,9 @@
 const counter = (pattern) => {
   const nucleotides = ['A', 'C', 'G', 'T']
-  let occurrences = []
 
-  for (let i = 0; i < nucleotides.length; i++) {
-    occurrences[i] = ((pattern.match(new RegExp(nucleotides[i], 'g')) || []).length).toString()
-  }
-  return occurrences.join(' ')
+  return nucleotides
+    .map(n => (pattern.match(new RegExp(n, 'g')) || []).length.toString())
+    .reduce((acc, occurrences) => acc + ' ' + occurrences)
 }
 
 module.exports = { counter }
