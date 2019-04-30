@@ -9,12 +9,11 @@ const allergiescount = (all) => {
     'pollen': 64,
     'cats': 128
   }
-  let score = 0
-  for (let i = 0; i < all.length; i++) {
-    score = score + allergies[all[i].toLowerCase()]
-  }
-  return parseInt(score)
+  // let score = 0
+
+  return all
+    .map(a => allergies[a.toLowerCase()])
+    .reduce((acc, sc) => acc + sc, 0)
 }
 
 module.exports = { allergiescount }
-// console.log(allergiescount(['eggs','tomatoes','strawberries','shellfish']))
