@@ -76,3 +76,7 @@ test('should return ten thousand', t => {
 test('should return five hundred', t => {
   t.is(translate(500), 'five hundred')
 })
+
+test('should return one hundred thousand', t => {
+  t.is(translate(100000), 'one hundred thousand')
+})
