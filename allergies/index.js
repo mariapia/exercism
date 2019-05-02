@@ -9,7 +9,6 @@ const allergiescount = (all) => {
     'pollen': 64,
     'cats': 128
   }
-  // let score = 0
 
   return all
     .map(a => allergies[a.toLowerCase()])

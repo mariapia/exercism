@@ -1,18 +1,27 @@
 import test from 'ava'
 import { allergiescount } from './index'
 
-test('Eggs and peanuts', t => {
-  let expected = 3
-  t.deepEqual(allergiescount(['eGgs', 'Peanuts']), expected)
+test('Should return the score for eggs and peanuts allergies', t => {
+  const allergicTo = ['eGgs', 'Peanuts']
+  t.deepEqual(allergiescount(allergicTo), 3)
 })
 
-test('Tomatoes, Strawberries, eggs, shellfish', t => {
-  let expected = allergiescount(['eggs', 'TOMAtoes', 'strawberries', 'shellfish'])
-  t.deepEqual(29, expected)
+test('Should return the score for Tomatoes, Strawberries, eggs, shellfish', t => {
+  const allergicTo = ['eggs', 'TOMAtoes', 'strawberries', 'shellfish']
+  t.deepEqual(allergiescount(allergicTo), 29)
 })
 
-test('Tomatoes', t => {
+test('Should return the score for Tomatoes', t => {
   const allergicTo = ['tomatoes']
-  const expected = allergiescount(allergicTo)
-  t.deepEqual(16, expected)
+  t.deepEqual(allergiescount(allergicTo), 16)
+})
+
+test('Should return the score with no allergies', t => {
+  const allergicTo = []
+  t.is(allergiescount(allergicTo), 0)
+})
+
+test('Test with other allergies', t => {
+  const allergicTo = ['dogs']
+  t.is(allergiescount(allergicTo), 0)
 })
