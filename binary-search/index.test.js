@@ -25,3 +25,8 @@ test('item not found', t => {
   const newarray = [3, 5, 6]
   t.is(search(newarray, newarray.length, 7), false)
 })
+
+test('find the item 3', t => {
+  const newarray = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  t.is(search(newarray, newarray.length, 3), true)
+})
