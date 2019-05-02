@@ -8,13 +8,13 @@ test('create binary tree', t => {
   t.is(tree.right, null)
 })
 
-test('insert a value greater than 4', t => {
+test('insert a value greater than the root', t => {
   const tree = new Tree(4)
   tree.insert(5)
   t.is(tree.right.value, 5)
 })
 
-test('insert a value less than 4', t => {
+test('insert a value less than the root', t => {
   const tree = new Tree(4)
   tree.insert(2)
   t.is(tree.left.value, 2)

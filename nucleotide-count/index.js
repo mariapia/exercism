@@ -3,7 +3,7 @@ const counter = (pattern) => {
 
   return nucleotides
     .map(n => (pattern.match(new RegExp(n, 'g')) || []).length.toString())
-    .reduce((acc, occurrences) => acc + ' ' + occurrences)
+    .join(' ')
 }
 
 module.exports = { counter }
