@@ -25,3 +25,8 @@ test('Test with other allergies', t => {
   const allergicTo = ['dogs']
   t.is(allergiescount(allergicTo), 0)
 })
+
+test('Test with an existing allergy and a not existing allergy', t => {
+  const allergicTo = ['dogs', 'pollen']
+  t.is(allergiescount(allergicTo), 64)
+})

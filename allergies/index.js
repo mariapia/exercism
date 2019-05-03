@@ -11,7 +11,7 @@ const allergiescount = (all) => {
   }
 
   return all
-    .map(a => allergies[a.toLowerCase()])
+    .map(a => allergies[a.toLowerCase()] || 0)
     .reduce((acc, sc) => acc + sc, 0)
 }
 
